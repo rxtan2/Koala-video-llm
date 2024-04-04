@@ -1,4 +1,4 @@
-name: videollama
+name: koala-model
 channels:
   - pytorch
   - defaults

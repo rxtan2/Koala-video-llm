@@ -30,7 +30,7 @@ apt install ffmpeg
 Then, create a conda environment:
 ```
 conda env create -f environment.yml
-conda activate videollama
+conda activate koala-model
 ```
 
 
@@ -55,36 +55,24 @@ python apply_delta.py \
 
 ## Training
 
-We train our Koala model on instructional videos from a subset of HowTo100m dataset. 
+We train our Koala model on instructional videos from a subset of HowTo100m dataset. Please follow the preprocessing steps mentioned before to extract video frames for training.
 
-### 1. Pre-training
+### 1. Finetuning
 #### Data Preparation
-Download the metadata and video following the instructions from the official Github repo of [Webvid](https://github.com/m-bain/webvid).
-The folder structure of the dataset is shown below:
+Download the metadata and videos using the instructions from the official webpage of [HowTo100m](https://www.di.ens.fr/willow/research/howto100m/). Then, you can extract the video frames by running the script:
 ```
-|webvid_train_data
-|──filter_annotation
-|────0.tsv
-|──videos
-|────000001_000050
-|──────1066674784.mp4
+python -W ignore preprocessing_scripts/extract_video_frames.py --video_dir {path to directory where downloaded videos are stored} --output_dir {path to directory for storing extracted frames}
 ```
-```
-|cc3m
-|──filter_cap.json
-|──image
-|────GCC_train_000000000.jpg
-|────...
-```
+
 #### Script
 Config the the checkpoint and dataset paths in [video_llama_stage1_pretrain.yaml](./train_configs/video_llama_stage1_pretrain.yaml).
 Run the script:
 ```
-conda activate videollama
+conda activate koala-model
 torchrun --nproc_per_node=8 train.py --cfg-path  ./train_configs/video_llama_stage1_pretrain.yaml
 ```
 
-## Acknowledgement
+## Acknowledgements
 We would like to acknowledge the following approaches that allow us to build our work upon:
 * [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4): Enhancing Vision-language Understanding with Advanced Large Language Models
 * [BLIP-2](https://github.com/salesforce/LAVIS/tree/main/projects/blip2): Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models 
