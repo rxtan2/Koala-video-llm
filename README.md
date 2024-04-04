@@ -77,9 +77,9 @@ python -W ignore train.py --cfg-path ./train_configs/video_aggregation_finetune.
 ```
 
 ### To-do
-- [] Provide helper scripts for additional preprocessing of training and evaluation data
-- [] Clean evaluation scripts
-- [] Refactor evaluation code component for ease of understanding
+- [ ] Provide helper scripts for additional preprocessing of training and evaluation data
+- [ ] Clean evaluation scripts
+- [ ] Refactor evaluation code component for ease of understanding
 
 ## Acknowledgements
 We would like to acknowledge the following approaches that allow us to build our work upon:
