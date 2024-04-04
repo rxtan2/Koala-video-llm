@@ -30,17 +30,10 @@ model:
 
   max_txt_len: 320
 
-  # vicuna and llama_2_chat use different template !!!
-
   # for llama_2_chat:
   end_sym: "</s>"
   prompt_path: "prompts/alignment_image.txt"
   prompt_template: '[INST] <<SYS>>\n \n<</SYS>>\n\n{} [/INST] '
-
-  # for vicuna:
-  #end_sym: "###"
-  #prompt_path: "prompts/alignment_image.txt"
-  #prompt_template: '###Human: {} ###Assistant: '
 
 datasets:
   cc_sbu_align:
@@ -69,7 +62,7 @@ run:
   warmup_steps: 1000
 
   seed: 42
-  output_dir: "output/videollama_stage2_finetune"
+  output_dir: "output/koala_finetune"
 
   amp: True
   resume_ckpt_path: null

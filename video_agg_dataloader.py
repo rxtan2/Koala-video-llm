@@ -44,8 +44,7 @@ class HowTo100MDataset(Dataset):
         self.third_video_dir = '/projectnb/ivc-ml/rxtan/howto100m/extracted_frames/all_extracted_frames/'
 
         self.data_dir = args.data_dir
-        self.all_videos = list(pickle.load(open(os.path.join(self.data_dir, 'fifth_filtered_0.26_min_frames_128_full_train_videos.pkl'), 'rb')))
-
+        self.all_videos = list(pickle.load(open(os.path.join(self.data_dir, 'all_videos.pkl'), 'rb')))
         self.vid2label = pickle.load(open(os.path.join(self.data_dir, 'vid2label.pkl'), 'rb'))
 
         self.path_handler = VideoPathHandler()

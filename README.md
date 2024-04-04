@@ -64,12 +64,16 @@ Download the metadata and videos using the instructions from the official webpag
 python -W ignore preprocessing_scripts/extract_video_frames.py --video_dir {path to directory where downloaded videos are stored} --output_dir {path to directory for storing extracted frames}
 ```
 
+Please note that this script automatically deletes each video once the video frames have been extracted from it to save storage memory. Additionally, once all the frames have been extracted, please create a pickle file from a list containing the valid video frames named **all_videos.pkl** and store in a data directory.
+
+Finally, the downloaded HowTo100M dataset should also contain an annotation file named **HowTo100M_v1.csv**. Please process it to create a dictionary that maps video ids to their corresponding task labels which can be found in the file **task_ids.csv**. Save this dictionary as **vid2label.pkl** and store it in the same data directory as all_videos.pkl.
+
 #### Script
-Config the the checkpoint and dataset paths in [video_llama_stage1_pretrain.yaml](./train_configs/video_llama_stage1_pretrain.yaml).
+Config the the checkpoint and dataset paths in [video_aggregation_finetune.yaml](./train_configs/video_aggregation_finetune.yaml).
 Run the script:
 ```
 conda activate koala-model
-torchrun --nproc_per_node=8 train.py --cfg-path  ./train_configs/video_llama_stage1_pretrain.yaml
+python -W ignore train.py --cfg-path ./train_configs/video_aggregation_finetune.yaml --num_gpus {number of GPUs} --num_workers {worker threads} --batch_size {total batch size over number of GPUs}
 ```
 
 ## Acknowledgements
