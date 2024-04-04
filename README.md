@@ -76,6 +76,11 @@ conda activate koala-model
 python -W ignore train.py --cfg-path ./train_configs/video_aggregation_finetune.yaml --num_gpus {number of GPUs} --num_workers {worker threads} --batch_size {total batch size over number of GPUs}
 ```
 
+### To-do
+- [] Provide helper scripts for additional preprocessing of training and evaluation data
+- [] Clean evaluation scripts
+- [] Refactor evaluation code component for ease of understanding
+
 ## Acknowledgements
 We would like to acknowledge the following approaches that allow us to build our work upon:
 * [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4): Enhancing Vision-language Understanding with Advanced Large Language Models
