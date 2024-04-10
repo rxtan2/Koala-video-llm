@@ -109,3 +109,6 @@ If you find our project useful, please consider citing our paper as well as the 
 }
 ```
 
+## Contact
+Please do not hesitate to contact me at rxtan@bu.edu if you have any questions.
+
