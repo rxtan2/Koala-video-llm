@@ -16,7 +16,7 @@ Koala is built on top of [BLIP-2](https://github.com/salesforce/LAVIS/tree/main/
 
 ## Pre-trained & Fine-tuned Checkpoints
 
-The following checkpoints store learnable parameters (positional embedding layers, Video/Audio Q-former, and linear projection layers) only. Links to pretrained weights will be updated soon.
+The following checkpoints store learnable parameters (positional embedding layers, Video/Audio Q-former, and linear projection layers) only. To download our evaluation weights, please do so from this [link](https://drive.google.com/file/d/1rGI095o-p_wQP4p1jOzy9hUV_PHCgY4_/view?usp=drive_link). Please note that this may only be a temporary link due to an upcoming limit on google drive storage. I will update this link once I have found a more permanent storage location. 
 
 
 ## Usage
@@ -83,6 +83,7 @@ python -W ignore train.py --cfg-path ./train_configs/video_aggregation_finetune.
 
 ## Acknowledgements
 We would like to acknowledge the following approaches that allow us to build our work upon:
+* [LAVIS](https://github.com/salesforce/LAVIS): LAVIS - A Library for Language-Vision Intelligence
 * [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4): Enhancing Vision-language Understanding with Advanced Large Language Models
 * [BLIP-2](https://github.com/salesforce/LAVIS/tree/main/projects/blip2): Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models 
 * [EVA-CLIP](https://github.com/baaivision/EVA/tree/master/EVA-CLIP): Improved Training Techniques for CLIP at Scale
