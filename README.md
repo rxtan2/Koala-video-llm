@@ -76,6 +76,16 @@ conda activate koala-model
 python -W ignore train.py --cfg-path ./train_configs/video_aggregation_finetune.yaml --num_gpus {number of GPUs} --num_workers {worker threads} --batch_size {total batch size over number of GPUs}
 ```
 
+## Launch Demo on Local Machine
+Set the `llama_model` (this is the path to the pretrained weights of the language model) in [eval_configs/conversation_demo.yaml](./eval_configs/conversation_demo.yaml) accordingly. 
+Then, you can launch the demo with the model on a local machine by running the script:
+```
+python demo_video.py \
+    --cfg-path eval_configs/conversation_demo.yaml \
+    --model_type llama_v2
+    --pretrained_weight_path {path to pretrained weights}
+```
+
 ### To-do
 - [ ] Provide helper scripts for additional preprocessing of training and evaluation data
 - [ ] Clean evaluation scripts
