@@ -97,8 +97,7 @@ python demo_video.py \
 ```
 
 ### To-do
-- [ ] Provide helper scripts for additional preprocessing of training and evaluation data
-- [ ] Clean evaluation scripts
+- [ x ] Clean evaluation scripts
 - [ ] Refactor evaluation code component for ease of understanding
 
 ## Acknowledgements
