@@ -76,6 +76,16 @@ conda activate koala-model
 python -W ignore train.py --cfg-path ./train_configs/video_aggregation_finetune.yaml --num_gpus {number of GPUs} --num_workers {worker threads} --batch_size {total batch size over number of GPUs}
 ```
 
+### 2. Evaluation
+#### EgoSchema Data Preparation
+Please begin by downloading the annotation files and videos from the official webpage of [EgoSchema](https://github.com/egoschema/EgoSchema). Then, you can extract the video frames by running the same script as mentioned above.
+
+#### Evaluation Script
+Once the evaluation data has been preprocessed, start the evaluation process by running the following command:
+```
+python -W ignore eval_qa_egoschema.py --caption_output_dir {path to directory for storing the model predictions} --video_dir {path to directory that contains the extracted frames} --data_dir {path to directory that contains EgoSchema annotation files}
+```
+
 ## Launch Demo on Local Machine
 Set the `llama_model` (this is the path to the pretrained weights of the language model) in [eval_configs/conversation_demo.yaml](./eval_configs/conversation_demo.yaml) accordingly. 
 Then, you can launch the demo with the model on a local machine by running the script:
